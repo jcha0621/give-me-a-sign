@@ -8,10 +8,11 @@ public class MatchingGameState : MonoBehaviour
     string currentLetter;
     List<string> lettersInLevel;
     char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-    bool shouldChangeLetter;
     Text letterText; 
 
     public string[] options = new string[4];
+
+    public bool shouldChangeLetter = true;
 
     // Publicly exposed variable that determines which letters are in the level.
     // Connect with levels by customly setting for each level scene.
@@ -23,8 +24,6 @@ public class MatchingGameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        letterText = gameObject.transform.Find("Letter").gameObject.GetComponent<Text>();
-        
         switch(level)
         {
             case 1:
@@ -43,29 +42,32 @@ public class MatchingGameState : MonoBehaviour
                 lettersInLevel = new List<string> { "u", "v", "w","x","y","z" };
                 break;                
         }
-        changeLetter();
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(shouldChangeLetter)
-            changeLetter();
-        
+        if(letterText == null){
+            StartCoroutine(StartRoutine());
+        }
+        else{
+            if(shouldChangeLetter)
+                changeLetter();
+        }
     }
 
-    public bool getShouldChangeLetter(){ return shouldChangeLetter;}
-
-    void changeLetter(){
+    void changeLetter()
+    {
+       Debug.Log("changing letter");
        currentLetter = lettersInLevel[UnityEngine.Random.Range(0,lettersInLevel.Count)].ToString();
        letterText.text = currentLetter.ToUpper();
-       changeOptions();
-       
+       changeOptions();    
+       shouldChangeLetter = false;   
     }
 
-    void changeOptions(){
+    void changeOptions()
+    {
+        Debug.Log("updating options");
         // Populate answer choice options
        int currentLetterIndex = UnityEngine.Random.Range(0,4);
        options[currentLetterIndex] = currentLetter;
@@ -73,5 +75,19 @@ public class MatchingGameState : MonoBehaviour
            if(i!=currentLetterIndex)
             options[i] = alphabet[UnityEngine.Random.Range(0,26)].ToString();
        }
+    }
+
+    IEnumerator StartRoutine()
+    {
+        yield return new WaitForEndOfFrame();
+        /*
+        while(this.transform.Find("Letter") == null){
+            yield return null;
+        }
+        */
+
+        //letterText = this.transform.Find("Letter").gameObject.GetComponent<Text>();
+        letterText = GameObject.Find("Letter").GetComponent<Text>();
+        Debug.Log(letterText.text);
     }
 }
