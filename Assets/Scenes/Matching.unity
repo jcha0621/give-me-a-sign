@@ -239,15 +239,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac517b0c50d1fc4287c9fe93162a8a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questionCount: 1
   options:
   - 
   - 
   - 
   - 
   shouldChangeLetter: 1
-  optionToChange: 0
+  matchingScore: 0
+  resetImages: -1
   level: 4
-  points: {fileID: 0}
 --- !u!1 &347194926
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,7 +837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 936619392}
   m_Layer: 0
-  m_Name: Option
+  m_Name: Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1601,6 +1602,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5766143221009249922, guid: 7b2e7d6d63003b54e8eb563c5356adc7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6242692299151763851, guid: 7b2e7d6d63003b54e8eb563c5356adc7, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
@@ -1804,3 +1809,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032235a030094a0489868a9976b00387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
