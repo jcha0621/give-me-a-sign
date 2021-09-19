@@ -18,7 +18,7 @@ public class MatchingGameState : MonoBehaviour
     public int level;
 
     //Script that controls point system in matching game.
-    public MatchingGamePoints points;
+    // public MatchingGamePoints points;
 
     // Start is called before the first frame update
     void Start()
