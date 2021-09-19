@@ -8,11 +8,17 @@ public class MatchingGameState : MonoBehaviour
     string currentLetter;
     List<string> lettersInLevel;
     char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-    Text letterText; 
+    Text letterText;
+    
+    public int questionCount = 1;
 
     public string[] options = new string[4];
 
-    public bool shouldChangeLetter = true;
+    public bool shouldChangeLetter;
+
+    public int matchingScore;
+
+    public int resetImages = -1;
 
     // Publicly exposed variable that determines which letters are in the level.
     // Connect with levels by customly setting for each level scene.
@@ -67,7 +73,6 @@ public class MatchingGameState : MonoBehaviour
 
     void changeOptions()
     {
-        Debug.Log("updating options");
         // Populate answer choice options
        int currentLetterIndex = UnityEngine.Random.Range(0,4);
        options[currentLetterIndex] = currentLetter;
@@ -76,18 +81,19 @@ public class MatchingGameState : MonoBehaviour
             options[i] = alphabet[UnityEngine.Random.Range(0,26)].ToString();
        }
     }
+    public string getCurrentLetter() { return currentLetter; }
 
     IEnumerator StartRoutine()
     {
         yield return new WaitForEndOfFrame();
-        /*
-        while(this.transform.Find("Letter") == null){
-            yield return null;
-        }
-        */
-
-        //letterText = this.transform.Find("Letter").gameObject.GetComponent<Text>();
         letterText = GameObject.Find("Letter").GetComponent<Text>();
         Debug.Log(letterText.text);
+    }
+
+    public void resetState(){
+        questionCount +=1;
+        Debug.Log("resetting state");
+        shouldChangeLetter = true;
+        resetImages = 0;
     }
 }

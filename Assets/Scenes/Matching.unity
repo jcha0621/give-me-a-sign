@@ -245,7 +245,8 @@ MonoBehaviour:
   - 
   - 
   shouldChangeLetter: 1
-  level: 5
+  optionToChange: 0
+  level: 4
   points: {fileID: 0}
 --- !u!1 &347194926
 GameObject:
@@ -1584,6 +1585,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2882029710076594764, guid: 7b2e7d6d63003b54e8eb563c5356adc7, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.5254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882029710076594764, guid: 7b2e7d6d63003b54e8eb563c5356adc7, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.68235296
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882029710076594764, guid: 7b2e7d6d63003b54e8eb563c5356adc7, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.21568629
+      objectReference: {fileID: 0}
     - target: {fileID: 2882029710076594765, guid: 7b2e7d6d63003b54e8eb563c5356adc7, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1710,6 +1723,7 @@ GameObject:
   - component: {fileID: 1907439416}
   - component: {fileID: 1907439418}
   - component: {fileID: 1907439417}
+  - component: {fileID: 1907439419}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
@@ -1778,3 +1792,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907439415}
   m_CullTransparentMesh: 1
+--- !u!114 &1907439419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907439415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032235a030094a0489868a9976b00387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

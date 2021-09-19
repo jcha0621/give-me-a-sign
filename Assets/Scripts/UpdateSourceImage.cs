@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UpdateSourceImage : MonoBehaviour
 {
+    Button btn;
     Image aslImage;
     string letter;
     MatchingGameState state;
@@ -19,6 +20,7 @@ public class UpdateSourceImage : MonoBehaviour
         if (!(aslImage = this.gameObject.GetComponent<Image>())){
             Debug.Log("No image component found");
         }
+        btn = transform.parent.gameObject.GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -28,27 +30,29 @@ public class UpdateSourceImage : MonoBehaviour
             StartCoroutine(StartRoutine());
         }
         else {
-            Debug.Log("should change letter: "+ state.shouldChangeLetter);
-            if(state.shouldChangeLetter || aslImage.sprite==null){
-                Debug.Log("changing option " + option + "sprite with letter " + letter);
+            if(state.resetImages == option){
+                aslImage.sprite = null;
+                state.resetImages = state.resetImages==3 ? -1 : state.resetImages+1;
+                // Reset selected color to white.
+                ColorBlock cb = btn.colors;
+                cb.selectedColor = Color.white;
+                btn.colors = cb;
+            }
+            else if(aslImage.sprite == null || state.shouldChangeLetter){
                 letter = state.options[option];
                 aslImage.sprite = sprites[letter[0]-97];
+                
             }
         }
+
     }
+
+    public string getLetter(){ return letter; }
 
     IEnumerator StartRoutine()
     {
-        yield return new WaitForEndOfFrame();
-
-        /*
-       while(GameObject.Find("Canvas") == null){
-        //state = gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<MatchingGameState>();
-        yield return null;
-       }
-       */
-      
+       yield return new WaitForEndOfFrame();
        state = GameObject.Find("Canvas").GetComponent<MatchingGameState>();
-       Debug.Log("state:" + state);
     }
+
 }
