@@ -18,14 +18,14 @@ public class UpdateSourceImage : MonoBehaviour
             return;
         }
         letter = state.options[option];
-        aslImage.sprite = Resources.Load<Sprite>("asl_" + letter.ToLower());
+        aslImage.sprite = Resources.Load<Sprite>("asl_" + letter);
     }
 
     // Update is called once per frame
     void Update()
     {
         if(state.getShouldChangeLetter()){
-            aslImage.sprite = Resources.Load<Sprite>("asl_" + letter.ToLower());
+            aslImage.sprite = Resources.Load<Sprite>("asl_" + letter);
         }
     }
 }
