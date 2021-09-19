@@ -116,8 +116,10 @@ public class MatchingGameState : MonoBehaviour
             if (i != currentLetterIndex)
             {
                 int j = UnityEngine.Random.Range(0, 26);
-                while(randomVals.Contains(j))
+                while (randomVals.Contains(j) || currentLetter.ToLower().Equals(alphabet[j].ToString()))
                 {
+                    
+                    
                     j = UnityEngine.Random.Range(0, 26);
                 }
                 randomVals.Add(j);
