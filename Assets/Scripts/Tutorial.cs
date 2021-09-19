@@ -9,8 +9,6 @@ public class Tutorial : MonoBehaviour
 
     private GameManager gameManager;
     public Text letterText;
-    
-    public GameObject sign; // need to add changing the ASL image as well
 
     // Start is called before the first frame update
     void Start()
