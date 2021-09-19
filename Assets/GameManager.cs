@@ -12,6 +12,7 @@ public class GameManager : Singleton<GameManager>
     public float score = 0f;
 
     public string currentLetters = "";
+    public string currentLetter = "";
 
     void Start()
     {
@@ -49,6 +50,7 @@ public class GameManager : Singleton<GameManager>
     public void LoadLesson(string letters)
     {
         currentLetters = letters;
+        currentLetter = letters.Substring(0, 1);
         SceneManager.LoadScene("Tutorial");
     }
 }
