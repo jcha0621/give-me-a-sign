@@ -110,10 +110,19 @@ public class MatchingGameState : MonoBehaviour
     {
         // Populate answer choice options
        int currentLetterIndex = UnityEngine.Random.Range(0,4);
+        List<int> randomVals = new List<int>();
        options[currentLetterIndex] = currentLetter;
        for(int i=0; i<options.Length; i++){
-           if(i!=currentLetterIndex)
-            options[i] = alphabet[UnityEngine.Random.Range(0,26)].ToString();
+            if (i != currentLetterIndex)
+            {
+                int j = UnityEngine.Random.Range(0, 26);
+                while(randomVals.Contains(j))
+                {
+                    j = UnityEngine.Random.Range(0, 26);
+                }
+                randomVals.Add(j);
+                options[i] = alphabet[j].ToString();
+            }
        }
     }
     public string getCurrentLetter() { return currentLetter; }
