@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
@@ -13,5 +14,10 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         letterText.text = letter;
+    }
+
+    public void TutorialContinue()
+    {
+        SceneManager.LoadScene("Catching");
     }
 }
