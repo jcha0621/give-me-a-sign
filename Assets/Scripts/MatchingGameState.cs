@@ -10,7 +10,11 @@ public class MatchingGameState : MonoBehaviour
     List<string> lettersInLevel;
     char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
     Text letterText;
-    
+
+    //Letters that the player has currently had tutorials for
+    List<string> lettersLearned;
+
+
     public int questionCount = 1;
 
     public string[] options = new string[4];
@@ -34,6 +38,7 @@ public class MatchingGameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lettersLearned = new List<string>();
         lettersInLevel = new List<string>();
         gameManager = GameManager.Instance;
         Debug.Log(gameManager.currentSet);
@@ -42,6 +47,13 @@ public class MatchingGameState : MonoBehaviour
         foreach(char c in chars)
         {
             lettersInLevel.Add(c.ToString().ToLower());
+        }
+
+        chars = gameManager.currentLetters.ToCharArray();
+
+        foreach (char c in chars)
+        {
+            lettersLearned.Add(c.ToString().ToLower());
         }
 
         //switch(level)
@@ -63,7 +75,7 @@ public class MatchingGameState : MonoBehaviour
         //        break;                
         //}
 
-        
+
 
     }
 
@@ -88,7 +100,7 @@ public class MatchingGameState : MonoBehaviour
     void changeLetter()
     {
        Debug.Log("changing letter");
-       currentLetter = lettersInLevel[UnityEngine.Random.Range(0,lettersInLevel.Count)].ToString();
+       currentLetter = lettersLearned[UnityEngine.Random.Range(0, lettersLearned.Count)].ToString();
        letterText.text = currentLetter.ToUpper();
        changeOptions();    
        shouldChangeLetter = false;   
