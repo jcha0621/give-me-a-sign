@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class Levels : MonoBehaviour
 {
-    public void Tutorial()
+    private GameManager gameManager;
+
+    private void Start()
     {
-        SceneManager.LoadScene("Tutorial");
+        gameManager = GameManager.Instance;
+    }
+    public void Tutorial(string letters)
+    {
+        gameManager.LoadLesson(letters);
     }
 }

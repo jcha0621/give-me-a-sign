@@ -209,13 +209,13 @@ MonoBehaviour:
       - m_Target: {fileID: 950574778}
         m_TargetAssemblyTypeName: Levels, Assembly-CSharp
         m_MethodName: Tutorial
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ABCDE
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &364192192
@@ -1140,13 +1140,13 @@ MonoBehaviour:
       - m_Target: {fileID: 950574778}
         m_TargetAssemblyTypeName: Levels, Assembly-CSharp
         m_MethodName: Tutorial
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: UVWXYZ
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &979537058
@@ -1223,8 +1223,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 607, y: 131}
-  m_SizeDelta: {x: 600, y: 378.7354}
+  m_AnchoredPosition: {x: 594.7423, y: 131}
+  m_SizeDelta: {x: 575.4846, y: 378.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098390953
 MonoBehaviour:
@@ -1273,13 +1273,13 @@ MonoBehaviour:
       - m_Target: {fileID: 950574778}
         m_TargetAssemblyTypeName: Levels, Assembly-CSharp
         m_MethodName: Tutorial
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: KLMNO
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1098390954
@@ -1406,13 +1406,13 @@ MonoBehaviour:
       - m_Target: {fileID: 950574778}
         m_TargetAssemblyTypeName: Levels, Assembly-CSharp
         m_MethodName: Tutorial
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PQRST
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1885136974
@@ -1539,13 +1539,13 @@ MonoBehaviour:
       - m_Target: {fileID: 950574778}
         m_TargetAssemblyTypeName: Levels, Assembly-CSharp
         m_MethodName: Tutorial
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: FGHIJ
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1921801983

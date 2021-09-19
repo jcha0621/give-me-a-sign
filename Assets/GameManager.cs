@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
     public bool gameOver = false;
     // public CatchingSign catchingSign;
     public float waitTime = 0.5f;
     public float waitTimeCounter = 0f;
     public float score = 0f;
+
+    public string currentLetters = "";
+
+    void Start()
+    {
+        
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -35,5 +43,12 @@ public class GameManager : MonoBehaviour
         {
             gameOver = true;
         }
+    }
+
+
+    public void LoadLesson(string letters)
+    {
+        currentLetters = letters;
+        SceneManager.LoadScene("Tutorial");
     }
 }
