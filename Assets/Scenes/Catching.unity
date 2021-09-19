@@ -644,7 +644,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: 0
-  catchingSign: {fileID: 1324300348612270238, guid: 0e53a06c2d1de0c4488aff61a48719bd, type: 3}
   waitTime: 0.5
   waitTimeCounter: 0
   score: 0
