@@ -9,9 +9,12 @@ public class Congrats : MonoBehaviour
     public Text scoreText;
     public int score = 984;
 
+    private GameManager gameManager;
+
     void Start()
     {
-        scoreText.text = score.ToString();
+        gameManager = GameManager.Instance;
+        scoreText.text = gameManager.score.ToString();
     }
 
     public void Levels()

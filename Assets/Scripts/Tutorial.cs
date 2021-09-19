@@ -9,18 +9,18 @@ public class Tutorial : MonoBehaviour
 
     private GameManager gameManager;
     public Text letterText;
-    public string letter = "S";
+    
     public GameObject sign; // need to add changing the ASL image as well
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.Instance;
-        letterText.text = gameManager.currentLetter.ToUpper();
+        letterText.text = gameManager.currentLetter.ToString().ToUpper();
     }
 
     public void TutorialContinue()
     {
-        SceneManager.LoadScene("Catching");
+        SceneManager.LoadScene("Matching");
     }
 }

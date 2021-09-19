@@ -1450,6 +1450,36 @@ MonoBehaviour:
   waitTime: 0.5
   waitTimeCounter: 0
   score: 0
+  currentSet: 
+  currentLetter: 32
+  currentLetters: 
+  sprites:
+  - {fileID: 21300000, guid: 534b1a3db5c457b499a38c6bd374e5dd, type: 3}
+  - {fileID: 21300000, guid: 34a0078267c5584409d0e17fbeb69bfb, type: 3}
+  - {fileID: 21300000, guid: 86d70c20c93a95e4e8cf65457f2a8e87, type: 3}
+  - {fileID: 21300000, guid: a13908ceccfb98d42bf5eac954ab483e, type: 3}
+  - {fileID: 21300000, guid: 10d50d66443edb145b451f50bd0c286e, type: 3}
+  - {fileID: 21300000, guid: b49dc5bd9fa11a3468c0e69876836803, type: 3}
+  - {fileID: 21300000, guid: 0beec715fd144bf4bbd1cc87ab06d272, type: 3}
+  - {fileID: 21300000, guid: f930f60e57f78d842b3ca1db8332949e, type: 3}
+  - {fileID: 21300000, guid: 00324e72bf900964c80c635d87472116, type: 3}
+  - {fileID: 21300000, guid: d2d342fb9a47b0646a654178b875673d, type: 3}
+  - {fileID: 21300000, guid: 882e455b71fa1ce409e03c7e737d8275, type: 3}
+  - {fileID: 21300000, guid: 1f2ba22b441c27545b703631fa68025f, type: 3}
+  - {fileID: 21300000, guid: 170926ea8b5aaca4692f66c15cd0e38a, type: 3}
+  - {fileID: 21300000, guid: 18559dbd4bdf6a94f97d5440fb336eaf, type: 3}
+  - {fileID: 21300000, guid: 222924cba576c894da35a8afc14812b9, type: 3}
+  - {fileID: 21300000, guid: b5ee89c5e3563b94687986672ee50655, type: 3}
+  - {fileID: 21300000, guid: a4e2c6d28553ec04d9524d7760d5db8c, type: 3}
+  - {fileID: 21300000, guid: dcfca8f925dc04645b872de3fdacab46, type: 3}
+  - {fileID: 21300000, guid: 215f0e0682784bc4e8b159db0776e04a, type: 3}
+  - {fileID: 21300000, guid: 422ebfe219f7d6f41873592a8835d398, type: 3}
+  - {fileID: 21300000, guid: b676ae3269389094e887fcae0a77a7f9, type: 3}
+  - {fileID: 21300000, guid: 42a5d583cefb05b46982f40dd7bebec1, type: 3}
+  - {fileID: 21300000, guid: bd33176b877e58f42b46e47609054a96, type: 3}
+  - {fileID: 21300000, guid: 6ebe1f46c87c6634d87a7b34c0cec13f, type: 3}
+  - {fileID: 21300000, guid: 08061ab56bae05144b144f47cb756813, type: 3}
+  - {fileID: 21300000, guid: 77d5a8452610bcc4281e1cd217fcdb6c, type: 3}
 --- !u!4 &1965548280
 Transform:
   m_ObjectHideFlags: 0

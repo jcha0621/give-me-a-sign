@@ -11,8 +11,13 @@ public class GameManager : Singleton<GameManager>
     public float waitTimeCounter = 0f;
     public float score = 0f;
 
+    public string currentSet = "";
+    public char currentLetter = ' ';
     public string currentLetters = "";
-    public string currentLetter = "";
+
+
+    // ASL Sprites
+    public Sprite[] sprites = new Sprite[26];
 
     void Start()
     {
@@ -35,10 +40,7 @@ public class GameManager : Singleton<GameManager>
             }
         }
 
-        if (score >= 200)
-        {
-            SceneManager.LoadScene("Tutorial");
-        }
+        
 
         if (score <= -20)
         {
@@ -49,8 +51,33 @@ public class GameManager : Singleton<GameManager>
 
     public void LoadLesson(string letters)
     {
-        currentLetters = letters;
-        currentLetter = letters.Substring(0, 1);
+        letters = letters.ToUpper();
+        currentSet = letters;
+        currentLetters = letters.Substring(0, 1);
+        currentLetter = letters.ToCharArray()[0];
         SceneManager.LoadScene("Tutorial");
+    }
+
+    public void ProgressLetter()
+    {
+
+        if (currentLetters.Length < currentSet.Length)
+        {
+            currentLetters = currentSet.Substring(0, currentLetters.Length + 1);
+            currentLetter = currentLetters.ToCharArray()[currentLetters.Length - 1];
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            SceneManager.LoadScene("Congrats");
+        }
+    }
+
+    public Sprite GetSprite(string letter)
+    {
+        letter = letter.ToLower();
+        char letterc = letter.ToCharArray()[0];
+        Debug.Log(letterc);
+        return sprites[letterc- 97];
     }
 }
