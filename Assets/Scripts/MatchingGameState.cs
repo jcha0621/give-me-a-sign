@@ -8,7 +8,7 @@ public class MatchingGameState : MonoBehaviour
     string currentLetter;
     List<string> lettersInLevel;
     char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-    bool shouldChangeLetter;
+    bool shouldChangeLetter = true;
     Text letterText; 
 
     public string[] options = new string[4];
@@ -23,7 +23,45 @@ public class MatchingGameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        letterText = gameObject.transform.Find("Letter").gameObject.GetComponent<Text>();
+        StartCoroutine(StartRoutine());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(shouldChangeLetter)
+            changeLetter();
+        
+    }
+
+    public bool getShouldChangeLetter(){ return shouldChangeLetter;}
+
+    void changeLetter(){
+       currentLetter = lettersInLevel[UnityEngine.Random.Range(0,lettersInLevel.Count)].ToString();
+       letterText.text = currentLetter.ToUpper();
+       changeOptions();
+       shouldChangeLetter = false;
+       
+    }
+
+    void changeOptions(){
+        // Populate answer choice options
+       int currentLetterIndex = UnityEngine.Random.Range(0,4);
+       options[currentLetterIndex] = currentLetter;
+       for(int i=0; i<options.Length; i++){
+           if(i!=currentLetterIndex)
+            options[i] = alphabet[UnityEngine.Random.Range(0,26)].ToString();
+       }
+    }
+
+    IEnumerator StartRoutine()
+    {
+        while(letterText == null)
+        {
+            letterText = gameObject.transform.Find("Letter").gameObject.GetComponent<Text>();
+            yield return null;
+        }
+
         
         switch(level)
         {
@@ -44,34 +82,5 @@ public class MatchingGameState : MonoBehaviour
                 break;                
         }
         changeLetter();
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(shouldChangeLetter)
-            changeLetter();
-        
-    }
-
-    public bool getShouldChangeLetter(){ return shouldChangeLetter;}
-
-    void changeLetter(){
-       currentLetter = lettersInLevel[UnityEngine.Random.Range(0,lettersInLevel.Count)].ToString();
-       letterText.text = currentLetter.ToUpper();
-       changeOptions();
-       
-    }
-
-    void changeOptions(){
-        // Populate answer choice options
-       int currentLetterIndex = UnityEngine.Random.Range(0,4);
-       options[currentLetterIndex] = currentLetter;
-       for(int i=0; i<options.Length; i++){
-           if(i!=currentLetterIndex)
-            options[i] = alphabet[UnityEngine.Random.Range(0,26)].ToString();
-       }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2882029708860605372}
   - component: {fileID: 2882029708860605374}
   - component: {fileID: 2882029708860605373}
+  - component: {fileID: 6242692299151763851}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -75,6 +76,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6242692299151763851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882029708860605371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d883ac773b8e714088ddf6e6d9be6cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  option: 0
 --- !u!1 &2882029710076594762
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +190,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.73894626, g: 0.9622642, b: 0.8885923, a: 1}
     m_PressedColor: {r: 0.42912066, g: 0.7924528, b: 0.6701775, a: 1}
-    m_SelectedColor: {r: 0.427451, g: 0.79215693, b: 0.67058825, a: 1}
+    m_SelectedColor: {r: 0.754717, g: 0.7290851, b: 0.7290851, a: 1}
     m_DisabledColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

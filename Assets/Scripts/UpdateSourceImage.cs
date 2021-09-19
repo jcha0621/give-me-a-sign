@@ -8,11 +8,13 @@ public class UpdateSourceImage : MonoBehaviour
     Image aslImage;
     string letter;
 
-    public MatchingGameState state;
+    MatchingGameState state;
     public int option;
     // Start is called before the first frame update
     void Start()
     {
+        //state = gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<MatchingGameState>();
+        state = gameObject.transform.Find("Canvas").gameObject.GetComponent<MatchingGameState>();
         if (!(aslImage = this.gameObject.GetComponent<Image>())){
             Debug.Log("No image component found");
             return;
